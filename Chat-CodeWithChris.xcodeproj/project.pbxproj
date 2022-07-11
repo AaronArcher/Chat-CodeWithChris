@@ -11,6 +11,10 @@
 		EE10664D287CAA7E00F36351 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE10664C287CAA7E00F36351 /* ContentView.swift */; };
 		EE10664F287CAA8000F36351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE10664E287CAA8000F36351 /* Assets.xcassets */; };
 		EE106652287CAA8000F36351 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE106651287CAA8000F36351 /* Preview Assets.xcassets */; };
+		EE106661287CACF400F36351 /* LexendDeca-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE10665E287CACF400F36351 /* LexendDeca-SemiBold.ttf */; };
+		EE106662287CACF400F36351 /* LexendDeca-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE10665F287CACF400F36351 /* LexendDeca-Bold.ttf */; };
+		EE106663287CACF400F36351 /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE106660287CACF400F36351 /* LexendDeca-Regular.ttf */; };
+		EE106666287CAF3300F36351 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE106665287CAF3300F36351 /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		EE10664C287CAA7E00F36351 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EE10664E287CAA8000F36351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE106651287CAA8000F36351 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EE10665E287CACF400F36351 /* LexendDeca-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-SemiBold.ttf"; sourceTree = "<group>"; };
+		EE10665F287CACF400F36351 /* LexendDeca-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Bold.ttf"; sourceTree = "<group>"; };
+		EE106660287CACF400F36351 /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
+		EE106664287CAD3300F36351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EE106665287CAF3300F36351 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +60,14 @@
 		EE106649287CAA7E00F36351 /* Chat-CodeWithChris */ = {
 			isa = PBXGroup;
 			children = (
+				EE106664287CAD3300F36351 /* Info.plist */,
 				EE10664A287CAA7E00F36351 /* Chat_CodeWithChrisApp.swift */,
-				EE10664C287CAA7E00F36351 /* ContentView.swift */,
+				EE106658287CAABA00F36351 /* Views */,
+				EE106659287CAAC100F36351 /* ViewModels */,
+				EE10665A287CAAC800F36351 /* Models */,
+				EE10665B287CAACD00F36351 /* Services */,
+				EE10665C287CAAE500F36351 /* Helpers */,
+				EE10665D287CAAED00F36351 /* Fonts */,
 				EE10664E287CAA8000F36351 /* Assets.xcassets */,
 				EE106650287CAA8000F36351 /* Preview Content */,
 			);
@@ -65,6 +80,53 @@
 				EE106651287CAA8000F36351 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EE106658287CAABA00F36351 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE10664C287CAA7E00F36351 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EE106659287CAAC100F36351 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EE10665A287CAAC800F36351 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EE10665B287CAACD00F36351 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EE10665C287CAAE500F36351 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EE106665287CAF3300F36351 /* Fonts.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EE10665D287CAAED00F36351 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EE106660287CACF400F36351 /* LexendDeca-Regular.ttf */,
+				EE10665E287CACF400F36351 /* LexendDeca-SemiBold.ttf */,
+				EE10665F287CACF400F36351 /* LexendDeca-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +187,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE106663287CACF400F36351 /* LexendDeca-Regular.ttf in Resources */,
 				EE106652287CAA8000F36351 /* Preview Assets.xcassets in Resources */,
 				EE10664F287CAA8000F36351 /* Assets.xcassets in Resources */,
+				EE106662287CACF400F36351 /* LexendDeca-Bold.ttf in Resources */,
+				EE106661287CACF400F36351 /* LexendDeca-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE10664D287CAA7E00F36351 /* ContentView.swift in Sources */,
+				EE106666287CAF3300F36351 /* Fonts.swift in Sources */,
 				EE10664B287CAA7E00F36351 /* Chat_CodeWithChrisApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +336,7 @@
 				DEVELOPMENT_TEAM = VZ5R657T48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Chat-CodeWithChris/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +366,7 @@
 				DEVELOPMENT_TEAM = VZ5R657T48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Chat-CodeWithChris/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
