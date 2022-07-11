@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		EE10664B287CAA7E00F36351 /* Chat_CodeWithChrisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE10664A287CAA7E00F36351 /* Chat_CodeWithChrisApp.swift */; };
-		EE10664D287CAA7E00F36351 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE10664C287CAA7E00F36351 /* ContentView.swift */; };
+		EE10664D287CAA7E00F36351 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE10664C287CAA7E00F36351 /* RootView.swift */; };
 		EE10664F287CAA8000F36351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE10664E287CAA8000F36351 /* Assets.xcassets */; };
 		EE106652287CAA8000F36351 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE106651287CAA8000F36351 /* Preview Assets.xcassets */; };
 		EE106661287CACF400F36351 /* LexendDeca-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE10665E287CACF400F36351 /* LexendDeca-SemiBold.ttf */; };
 		EE106662287CACF400F36351 /* LexendDeca-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE10665F287CACF400F36351 /* LexendDeca-Bold.ttf */; };
 		EE106663287CACF400F36351 /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE106660287CACF400F36351 /* LexendDeca-Regular.ttf */; };
 		EE106666287CAF3300F36351 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE106665287CAF3300F36351 /* Fonts.swift */; };
+		EE106669287CB34900F36351 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE106668287CB34900F36351 /* CustomTabBar.swift */; };
+		EE10666B287CBA9E00F36351 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE10666A287CBA9E00F36351 /* TabBarButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EE106647287CAA7E00F36351 /* Chat-CodeWithChris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat-CodeWithChris.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE10664A287CAA7E00F36351 /* Chat_CodeWithChrisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_CodeWithChrisApp.swift; sourceTree = "<group>"; };
-		EE10664C287CAA7E00F36351 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EE10664C287CAA7E00F36351 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		EE10664E287CAA8000F36351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE106651287CAA8000F36351 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EE10665E287CACF400F36351 /* LexendDeca-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		EE106660287CACF400F36351 /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
 		EE106664287CAD3300F36351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EE106665287CAF3300F36351 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		EE106668287CB34900F36351 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		EE10666A287CBA9E00F36351 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +89,8 @@
 		EE106658287CAABA00F36351 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EE10664C287CAA7E00F36351 /* ContentView.swift */,
+				EE10664C287CAA7E00F36351 /* RootView.swift */,
+				EE106667287CB33000F36351 /* Custom Tab Bar */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +132,15 @@
 				EE10665F287CACF400F36351 /* LexendDeca-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EE106667287CB33000F36351 /* Custom Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				EE106668287CB34900F36351 /* CustomTabBar.swift */,
+				EE10666A287CBA9E00F36351 /* TabBarButton.swift */,
+			);
+			path = "Custom Tab Bar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,8 +216,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE10664D287CAA7E00F36351 /* ContentView.swift in Sources */,
+				EE106669287CB34900F36351 /* CustomTabBar.swift in Sources */,
+				EE10664D287CAA7E00F36351 /* RootView.swift in Sources */,
 				EE106666287CAF3300F36351 /* Fonts.swift in Sources */,
+				EE10666B287CBA9E00F36351 /* TabBarButton.swift in Sources */,
 				EE10664B287CAA7E00F36351 /* Chat_CodeWithChrisApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
