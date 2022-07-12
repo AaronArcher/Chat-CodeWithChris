@@ -17,6 +17,13 @@
 		EE106666287CAF3300F36351 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE106665287CAF3300F36351 /* Fonts.swift */; };
 		EE106669287CB34900F36351 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE106668287CB34900F36351 /* CustomTabBar.swift */; };
 		EE10666B287CBA9E00F36351 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE10666A287CBA9E00F36351 /* TabBarButton.swift */; };
+		EE10666D287DFAC200F36351 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE10666C287DFAC200F36351 /* GoogleService-Info.plist */; };
+		EE106670287DFB9B00F36351 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EE10666F287DFB9B00F36351 /* FirebaseAuth */; };
+		EE106672287DFB9B00F36351 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EE106671287DFB9B00F36351 /* FirebaseFirestore */; };
+		EE106674287DFB9B00F36351 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EE106673287DFB9B00F36351 /* FirebaseFirestoreSwift */; };
+		EE106676287DFB9B00F36351 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EE106675287DFB9B00F36351 /* FirebaseStorage */; };
+		EE106678287DFC2A00F36351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE106677287DFC2A00F36351 /* AppDelegate.swift */; };
+		EE10667B287E039700F36351 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE10667A287E039700F36351 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +39,10 @@
 		EE106665287CAF3300F36351 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		EE106668287CB34900F36351 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		EE10666A287CBA9E00F36351 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		EE10666C287DFAC200F36351 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		EE106677287DFC2A00F36351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE106679287E007E00F36351 /* Chat-CodeWithChris.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Chat-CodeWithChris.entitlements"; sourceTree = "<group>"; };
+		EE10667A287E039700F36351 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +50,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE106670287DFB9B00F36351 /* FirebaseAuth in Frameworks */,
+				EE106676287DFB9B00F36351 /* FirebaseStorage in Frameworks */,
+				EE106672287DFB9B00F36351 /* FirebaseFirestore in Frameworks */,
+				EE106674287DFB9B00F36351 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +79,10 @@
 		EE106649287CAA7E00F36351 /* Chat-CodeWithChris */ = {
 			isa = PBXGroup;
 			children = (
+				EE106679287E007E00F36351 /* Chat-CodeWithChris.entitlements */,
+				EE10666C287DFAC200F36351 /* GoogleService-Info.plist */,
 				EE106664287CAD3300F36351 /* Info.plist */,
+				EE106677287DFC2A00F36351 /* AppDelegate.swift */,
 				EE10664A287CAA7E00F36351 /* Chat_CodeWithChrisApp.swift */,
 				EE106658287CAABA00F36351 /* Views */,
 				EE106659287CAAC100F36351 /* ViewModels */,
@@ -98,6 +116,7 @@
 		EE106659287CAAC100F36351 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				EE10667A287E039700F36351 /* AuthViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -159,6 +178,12 @@
 			dependencies = (
 			);
 			name = "Chat-CodeWithChris";
+			packageProductDependencies = (
+				EE10666F287DFB9B00F36351 /* FirebaseAuth */,
+				EE106671287DFB9B00F36351 /* FirebaseFirestore */,
+				EE106673287DFB9B00F36351 /* FirebaseFirestoreSwift */,
+				EE106675287DFB9B00F36351 /* FirebaseStorage */,
+			);
 			productName = "Chat-CodeWithChris";
 			productReference = EE106647287CAA7E00F36351 /* Chat-CodeWithChris.app */;
 			productType = "com.apple.product-type.application";
@@ -187,6 +212,9 @@
 				Base,
 			);
 			mainGroup = EE10663E287CAA7E00F36351;
+			packageReferences = (
+				EE10666E287DFB9B00F36351 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = EE106648287CAA7E00F36351 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -206,6 +234,7 @@
 				EE10664F287CAA8000F36351 /* Assets.xcassets in Resources */,
 				EE106662287CACF400F36351 /* LexendDeca-Bold.ttf in Resources */,
 				EE106661287CACF400F36351 /* LexendDeca-SemiBold.ttf in Resources */,
+				EE10666D287DFAC200F36351 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,8 +245,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE106678287DFC2A00F36351 /* AppDelegate.swift in Sources */,
 				EE106669287CB34900F36351 /* CustomTabBar.swift in Sources */,
 				EE10664D287CAA7E00F36351 /* RootView.swift in Sources */,
+				EE10667B287E039700F36351 /* AuthViewModel.swift in Sources */,
 				EE106666287CAF3300F36351 /* Fonts.swift in Sources */,
 				EE10666B287CBA9E00F36351 /* TabBarButton.swift in Sources */,
 				EE10664B287CAA7E00F36351 /* Chat_CodeWithChrisApp.swift in Sources */,
@@ -346,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Chat-CodeWithChris/Chat-CodeWithChris.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chat-CodeWithChris/Preview Content\"";
@@ -376,6 +408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Chat-CodeWithChris/Chat-CodeWithChris.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chat-CodeWithChris/Preview Content\"";
@@ -423,6 +456,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE10666E287DFB9B00F36351 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE10666F287DFB9B00F36351 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE10666E287DFB9B00F36351 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		EE106671287DFB9B00F36351 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE10666E287DFB9B00F36351 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		EE106673287DFB9B00F36351 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE10666E287DFB9B00F36351 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		EE106675287DFB9B00F36351 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE10666E287DFB9B00F36351 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE10663F287CAA7E00F36351 /* Project object */;
 }
