@@ -8,6 +8,8 @@
 import Foundation
 import Contacts
 import Firebase
+import FirebaseStorage
+import UIKit
 
 class DatabaseService {
     
@@ -74,6 +76,63 @@ class DatabaseService {
         
         
         
+    }
+    
+    func setUserProfile(firstname: String, lastname: String, image: UIImage?, completion: @escaping (Bool) -> Void) {
+        
+        // TODO: Guard against logged in users
+        
+        // Get a reference to Firestore
+        let db = Firestore.firestore()
+        
+        // Set profile data
+        // TODO: After implementing authentication, instead create a document with the actual users uid
+        let doc = db.collection("users").document()
+        doc.setData(["firstname": firstname,
+                     "lastname": lastname])
+        
+        // Check if image is passed through
+        if let image = image {
+            
+            // Create storage reference
+                    let storageRef = Storage.storage().reference()
+                    
+                    // Turn our image into data
+                    let imageData = image.jpegData(compressionQuality: 0.8)
+                    
+                    // Check that we were able to convert it to data
+                    guard imageData != nil else {
+                        return
+                    }
+                    
+                    // Specify the file path and name
+                    let path = "images/\(UUID().uuidString).jpg"
+                    let fileRef = storageRef.child(path)
+        
+            let uploadTask = fileRef.putData(imageData!, metadata: nil) { meta, error in
+                
+                if error == nil && meta != nil {
+                    // Set image path to the profile
+                    doc.setData(["photo": path], merge: true) { error in
+                        
+                        if error == nil {
+                            // Success, notify caller
+                            completion(true)
+                        }
+                    }
+                    
+                } else {
+                    // Upload wasn't successful, notify caller
+                    completion(false)
+                }
+                
+            }
+
+            // Set the image path to the profile
+
+
+        }
+                        
     }
     
 }
