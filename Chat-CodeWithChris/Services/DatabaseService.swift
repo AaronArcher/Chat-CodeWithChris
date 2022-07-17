@@ -128,8 +128,6 @@ class DatabaseService {
                 
             }
 
-            // Set the image path to the profile
-
 
         }
                         

@@ -35,7 +35,9 @@ struct CustomTabBar: View {
 
             
             Button {
-                // Open  new chat
+                // Open new chat
+                AuthViewModel.logOut()
+                
             } label: {
                 
                 VStack(spacing: 4) {
