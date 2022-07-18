@@ -119,14 +119,30 @@ class DatabaseService {
             let uploadTask = fileRef.putData(imageData!, metadata: nil) { meta, error in
                 
                 if error == nil && meta != nil {
-                    // Set image path to the profile
-                    doc.setData(["photo": path], merge: true) { error in
+                    
+                    // Get full URL to image
+                    fileRef.downloadURL { url, error in
                         
-                        if error == nil {
-                            // Success, notify caller
-                            completion(true)
+                        // Check for errors
+                        if url != nil && error == nil {
+                          
+                            // Set image path to the profile
+                            doc.setData(["photo": url!.absoluteString], merge: true) { error in
+                                
+                                if error == nil {
+                                    // Success, notify caller
+                                    completion(true)
+                                }
+                            }
+                            
+                        } else {
+                            // Wasn't successful grabbing the url
+                            completion(false)
                         }
+                        
                     }
+                    
+                    
                     
                 } else {
                     // Upload wasn't successful, notify caller
@@ -136,6 +152,10 @@ class DatabaseService {
             }
 
 
+        }
+        else {
+            // No image was set
+            completion(true)
         }
                         
     }

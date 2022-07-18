@@ -80,6 +80,8 @@ struct CreateProfileView: View {
             Spacer()
             
             Button {
+                
+                // TODO: Check that the first and last name are filled in before allowing the profile to be created
 
                 // Prevent double taps
                 isSaveButtonDisabled = true

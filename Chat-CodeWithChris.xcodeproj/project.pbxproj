@@ -39,6 +39,7 @@
 		EE106696288099E200F36351 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE106695288099E200F36351 /* ImagePicker.swift */; };
 		EE1066B42885F06200F36351 /* ContactsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066B32885F06200F36351 /* ContactsListView.swift */; };
 		EE1066B62885F06D00F36351 /* ChatsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066B52885F06D00F36351 /* ChatsListView.swift */; };
+		EE1066B82885FAB000F36351 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066B72885FAB000F36351 /* ContactRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		EE106695288099E200F36351 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		EE1066B32885F06200F36351 /* ContactsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListView.swift; sourceTree = "<group>"; };
 		EE1066B52885F06D00F36351 /* ChatsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListView.swift; sourceTree = "<group>"; };
+		EE1066B72885FAB000F36351 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				EE1066B32885F06200F36351 /* ContactsListView.swift */,
+				EE1066B72885FAB000F36351 /* ContactRow.swift */,
 			);
 			path = "Contacts Views";
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				EE10667B287E039700F36351 /* AuthViewModel.swift in Sources */,
 				EE106686287E106000F36351 /* CreateProfileView.swift in Sources */,
 				EE106682287E104300F36351 /* PhoneNumberView.swift in Sources */,
+				EE1066B82885FAB000F36351 /* ContactRow.swift in Sources */,
 				EE106666287CAF3300F36351 /* Fonts.swift in Sources */,
 				EE1066B42885F06200F36351 /* ContactsListView.swift in Sources */,
 				EE106684287E104F00F36351 /* VerificationView.swift in Sources */,

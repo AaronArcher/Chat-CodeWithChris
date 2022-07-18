@@ -50,16 +50,26 @@ struct ContactsListView: View {
                     .padding()
             }
             .frame(height: 46)
+            .onChange(of: filterText) { _ in
+                // Filter the results
+                contactsViewModel.filterContacts(filterby: filterText
+                    .lowercased()
+                    .trimmingCharacters(in: .whitespacesAndNewlines))
+            }
             
-            if contactsViewModel.users.count > 0 {
+            if contactsViewModel.filteredUsers.count > 0 {
                 
                 // List
-                List(contactsViewModel.users) { user in
+                List(contactsViewModel.filteredUsers) { user in
                     
-                    // TODO: Display rows
-                    Text(user.firstname ?? "Test User")
+                    //  Display rows
+                    ContactRow(user: user)
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                 }
                 .listStyle(.plain)
+                .padding(.top, 12)
+                
             } else {
                 VStack {
                     
