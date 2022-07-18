@@ -14,16 +14,22 @@ struct RootView: View {
     @State private var isOnboarding = !AuthViewModel.isUserLoggedIn()
     
     var body: some View {
+        
         VStack {
             
-            Text("Hello, world!")
-                .padding()
+            switch selectedTab {
+            case .chats:
+                ChatsListView()
+            case .contacts:
+                ContactsListView()
+            }
             
             Spacer()
             
             CustomTabBar(selectedTab: $selectedTab)
             
         }
+        .background(Color("background").ignoresSafeArea())
         .fullScreenCover(isPresented: $isOnboarding) {
             // On dismiss
             
@@ -31,7 +37,7 @@ struct RootView: View {
             // The onboarding sequence
             OnboardingContainerView(isOnboarding: $isOnboarding)
         }
-
+        
         
     }
 }
