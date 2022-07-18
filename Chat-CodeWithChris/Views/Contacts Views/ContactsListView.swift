@@ -40,7 +40,6 @@ struct ContactsListView: View {
             
             // Search Bar
             ZStack {
-                
                 Rectangle()
                     .foregroundColor(.white)
                     .cornerRadius(20)
