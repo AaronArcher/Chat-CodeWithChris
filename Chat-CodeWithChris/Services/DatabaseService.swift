@@ -80,16 +80,23 @@ class DatabaseService {
     
     func setUserProfile(firstname: String, lastname: String, image: UIImage?, completion: @escaping (Bool) -> Void) {
         
-        // TODO: Guard against logged in users
+        // Ensure user is logged in
+        guard AuthViewModel.isUserLoggedIn() != false else {
+            // User is not logged in
+            return
+        }
+        
+        // Get user phone number
+        let userPhone = TextHelper.sanitizePhoneNumber(AuthViewModel.getLoggedInUserPhone())
         
         // Get a reference to Firestore
         let db = Firestore.firestore()
         
         // Set profile data
-        // TODO: After implementing authentication, instead create a document with the actual users uid
-        let doc = db.collection("users").document()
+        let doc = db.collection("users").document(AuthViewModel.getLoggedInUserID())
         doc.setData(["firstname": firstname,
-                     "lastname": lastname])
+                     "lastname": lastname,
+                     "phone": userPhone])
         
         // Check if image is passed through
         if let image = image {
@@ -132,5 +139,32 @@ class DatabaseService {
         }
                         
     }
+
+    func checkUserProfile(completion: @escaping (Bool) -> Void) {
+        
+        // Check that user is logged in
+        guard AuthViewModel.isUserLoggedIn() != false else { return }
+        
+        // Create Firebase Reference
+        let db = Firestore.firestore()
+        
+        db.collection("users").document(AuthViewModel.getLoggedInUserID()).getDocument { snapshot, error in
+            
+            // TODO: Keep the users profile data
+            
+            if snapshot != nil && error == nil {
+                // Notify that profile exists
+                completion(snapshot!.exists)
+            }
+            else {
+                // TODO: Look into using Result type to indicate failure vs profile exists
+
+                completion(false)
+            }
+            
+        }
+        
+    }
+    
     
 }

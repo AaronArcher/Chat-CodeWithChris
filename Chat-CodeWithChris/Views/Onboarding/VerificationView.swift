@@ -11,6 +11,7 @@ import Combine
 struct VerificationView: View {
     
     @Binding var currentStep: OnboardingStep
+    @Binding var isOnboarding: Bool
 
     @State private var verificationCode = ""
     
@@ -40,6 +41,7 @@ struct VerificationView: View {
                     .onReceive(Just(verificationCode)) { _ in
                         TextHelper.limitText(&verificationCode, 6)
                     }
+                    .padding(.horizontal)
                 
             }
             .padding(.top, 34)
@@ -51,8 +53,22 @@ struct VerificationView: View {
                 AuthViewModel.verifyCode(code: verificationCode) { error in
                     
                     if error == nil {
-                        // Move to next Step
-                        currentStep = .profile
+                        
+                        // check if this user has a profile
+                        DatabaseService().checkUserProfile { exists in
+                            
+                            if exists {
+                                // End the onboarding
+                                isOnboarding = false
+                                
+                            } else {
+                                // Move to Profile Creation Step
+                                currentStep = .profile
+                            }
+                                
+                        }
+                        
+                        
                     } else {
                         // TODO: Show error message
                     }
@@ -75,6 +91,6 @@ struct VerificationView: View {
 
 struct VerificationView_Previews: PreviewProvider {
     static var previews: some View {
-        VerificationView(currentStep: .constant(.verification))
+        VerificationView(currentStep: .constant(.verification), isOnboarding: .constant(true))
     }
 }
