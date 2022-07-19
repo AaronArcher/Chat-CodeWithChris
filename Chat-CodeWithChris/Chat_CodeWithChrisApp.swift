@@ -16,6 +16,7 @@ struct Chat_CodeWithChrisApp: App {
         WindowGroup {
             RootView()
                 .environmentObject(ContactsViewModel())
+                .environmentObject(ChatViewModel())
         }
     }
 }

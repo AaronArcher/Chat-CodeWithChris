@@ -40,6 +40,11 @@
 		EE1066B42885F06200F36351 /* ContactsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066B32885F06200F36351 /* ContactsListView.swift */; };
 		EE1066B62885F06D00F36351 /* ChatsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066B52885F06D00F36351 /* ChatsListView.swift */; };
 		EE1066B82885FAB000F36351 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066B72885FAB000F36351 /* ContactRow.swift */; };
+		EE1066BA288723CD00F36351 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066B9288723CD00F36351 /* ConversationView.swift */; };
+		EE1066BD2887264E00F36351 /* ProfilePicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066BC2887264E00F36351 /* ProfilePicView.swift */; };
+		EE1066BF28873A9400F36351 /* RoundedCornerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066BE28873A9400F36351 /* RoundedCornerExtension.swift */; };
+		EE1066C12887427E00F36351 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066C02887427E00F36351 /* Chat.swift */; };
+		EE1066C3288744F400F36351 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066C2288744F400F36351 /* ChatViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +80,11 @@
 		EE1066B32885F06200F36351 /* ContactsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListView.swift; sourceTree = "<group>"; };
 		EE1066B52885F06D00F36351 /* ChatsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListView.swift; sourceTree = "<group>"; };
 		EE1066B72885FAB000F36351 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
+		EE1066B9288723CD00F36351 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
+		EE1066BC2887264E00F36351 /* ProfilePicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicView.swift; sourceTree = "<group>"; };
+		EE1066BE28873A9400F36351 /* RoundedCornerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerExtension.swift; sourceTree = "<group>"; };
+		EE1066C02887427E00F36351 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		EE1066C2288744F400F36351 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +154,7 @@
 				EE1066B22885F04B00F36351 /* Chats Views */,
 				EE1066B12885F03B00F36351 /* Contacts Views */,
 				EE106667287CB33000F36351 /* Custom Tab Bar */,
+				EE1066BB2887261800F36351 /* Misc */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +164,7 @@
 			children = (
 				EE10667A287E039700F36351 /* AuthViewModel.swift */,
 				EE10668D287F426200F36351 /* ContactsViewModel.swift */,
+				EE1066C2288744F400F36351 /* ChatViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -161,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				EE10668F287F550C00F36351 /* User.swift */,
+				EE1066C02887427E00F36351 /* Chat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +193,7 @@
 				EE106689287E1A5F00F36351 /* OnboardingButtonStyle.swift */,
 				EE10668B287E245400F36351 /* CreateProfileTextfieldStyle.swift */,
 				EE106693287F5A1600F36351 /* TextHelper.swift */,
+				EE1066BE28873A9400F36351 /* RoundedCornerExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -230,8 +244,17 @@
 			isa = PBXGroup;
 			children = (
 				EE1066B52885F06D00F36351 /* ChatsListView.swift */,
+				EE1066B9288723CD00F36351 /* ConversationView.swift */,
 			);
 			path = "Chats Views";
+			sourceTree = "<group>";
+		};
+		EE1066BB2887261800F36351 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				EE1066BC2887264E00F36351 /* ProfilePicView.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,7 +362,12 @@
 				EE106684287E104F00F36351 /* VerificationView.swift in Sources */,
 				EE10668E287F426200F36351 /* ContactsViewModel.swift in Sources */,
 				EE10666B287CBA9E00F36351 /* TabBarButton.swift in Sources */,
+				EE1066C3288744F400F36351 /* ChatViewModel.swift in Sources */,
+				EE1066C12887427E00F36351 /* Chat.swift in Sources */,
+				EE1066BF28873A9400F36351 /* RoundedCornerExtension.swift in Sources */,
 				EE10664B287CAA7E00F36351 /* Chat_CodeWithChrisApp.swift in Sources */,
+				EE1066BD2887264E00F36351 /* ProfilePicView.swift in Sources */,
+				EE1066BA288723CD00F36351 /* ConversationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
