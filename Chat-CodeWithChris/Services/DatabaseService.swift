@@ -275,6 +275,26 @@ class DatabaseService {
         
     }
     
-    
+    /// Send a message to the database
+    func sendMessage(msg: String, chat: Chat) {
+        
+        // Check that it's a valid chat
+        guard chat.id != nil else { return }
+        
+        // Get a reference to database
+        let db = Firestore.firestore()
+        
+        // Add message document
+        db.collection("chats")
+            .document(chat.id!)
+            .collection("msgs")
+            .addDocument(data: ["imageurl" : "",
+                                "msg" : msg,
+                                "senderid" : AuthViewModel.getLoggedInUserID(),
+                                "timestamp" : Date()])
+        
+        
+        
+    }
     
 }
