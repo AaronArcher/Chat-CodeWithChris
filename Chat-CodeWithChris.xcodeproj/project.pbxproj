@@ -45,6 +45,7 @@
 		EE1066BF28873A9400F36351 /* RoundedCornerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066BE28873A9400F36351 /* RoundedCornerExtension.swift */; };
 		EE1066C12887427E00F36351 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066C02887427E00F36351 /* Chat.swift */; };
 		EE1066C3288744F400F36351 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066C2288744F400F36351 /* ChatViewModel.swift */; };
+		EE1066C72888947500F36351 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066C62888947500F36351 /* DateHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		EE1066BE28873A9400F36351 /* RoundedCornerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerExtension.swift; sourceTree = "<group>"; };
 		EE1066C02887427E00F36351 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		EE1066C2288744F400F36351 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		EE1066C62888947500F36351 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				EE10668B287E245400F36351 /* CreateProfileTextfieldStyle.swift */,
 				EE106693287F5A1600F36351 /* TextHelper.swift */,
 				EE1066BE28873A9400F36351 /* RoundedCornerExtension.swift */,
+				EE1066C62888947500F36351 /* DateHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				EE106692287F574C00F36351 /* DatabaseService.swift in Sources */,
 				EE10668C287E245400F36351 /* CreateProfileTextfieldStyle.swift in Sources */,
 				EE106688287E107500F36351 /* SyncContactsView.swift in Sources */,
+				EE1066C72888947500F36351 /* DateHelper.swift in Sources */,
 				EE106678287DFC2A00F36351 /* AppDelegate.swift in Sources */,
 				EE106694287F5A1600F36351 /* TextHelper.swift in Sources */,
 				EE10667E287E0E7A00F36351 /* OnboardingContainerView.swift in Sources */,
