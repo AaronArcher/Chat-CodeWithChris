@@ -9,6 +9,11 @@ import SwiftUI
 
 struct RootView: View {
     
+    // For detecting with the app state changes
+    @Environment(\.scenePhase) var scenePhase
+    
+    @EnvironmentObject var chatViewModel: ChatViewModel
+    
     @State private var selectedTab: Tabs = .contacts
     
     @State private var isOnboarding = !AuthViewModel.isUserLoggedIn()
@@ -43,6 +48,18 @@ struct RootView: View {
            
             // Show Conversation View
             ConversationView(isChatShowing: $isChatShowing)
+        }
+        .onChange(of: scenePhase) { newPhase in
+            
+            if newPhase == .active {
+                print("Active")
+            } else if newPhase == .inactive {
+                print("Inactive")
+            } else if newPhase == .background {
+                print("Background")
+                chatViewModel.chatListViewCleanup()
+            }
+            
         }
         
         

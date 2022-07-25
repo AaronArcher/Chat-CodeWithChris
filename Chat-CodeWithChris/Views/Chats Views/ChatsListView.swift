@@ -10,36 +10,86 @@ import SwiftUI
 struct ChatsListView: View {
     
     @EnvironmentObject var chatViewModel: ChatViewModel
+    @EnvironmentObject var contactsViewModel: ContactsViewModel
     
     @Binding var isChatShowing: Bool
     
     var body: some View {
-
-        if chatViewModel.chats.count > 0 {
+        
+        
+        VStack {
             
-            // Show List
-            List(chatViewModel.chats) { chat in
-            
+            // Heading
+            HStack {
+                
+                Text("Chats")
+                    .font(Font.pageTitle)
+                
+                Spacer()
+                
                 Button {
-                    // Set selected chat for ChatViewModel
-                    chatViewModel.selectedChat = chat
-                    
-                    // Display conversation View
-                    isChatShowing = true
+                    // TODO: Settings Button
                     
                 } label: {
-                    
-                    Text(chat.id ?? "empty chat id")
-                
+                    Image(systemName: "gearshape.fill")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(Color("icons-secondary"))
                 }
+                
+            }
+            .padding(.top, 20)
+            .padding(.horizontal)
+
             
+            // Chat List
+         
+            if chatViewModel.chats.count > 0 {
+                
+                // Show List
+                List(chatViewModel.chats) { chat in
+                    
+                    Button {
+                        // Set selected chat for ChatViewModel
+                        chatViewModel.selectedChat = chat
+                        
+                        // Display conversation View
+                        isChatShowing = true
+                        
+                    } label: {
+                        
+                        ChatListRow(chat: chat,
+                                    otherParticipants: contactsViewModel.getParticipants(ids: chat.participantids))
+                        
+                    }
+                    .buttonStyle(.plain)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    
+                }
+                .listStyle(.plain)
+                
+            } else {
+
+                Spacer()
+                
+                Image("no-chats-yet")
+
+                Text("Hmm... No chats created yet!")
+                    .font(Font.titleText)
+                    .padding(.top, 32)
+                
+                Text("Start a chat with a friend")
+                    .font(Font.bodyParagraph)
+                    .padding(.top, 8)
+                
+                Spacer()
+
             }
             
-        } else {
-            Text("No Chats")
         }
         
-
+        
     }
 }
 

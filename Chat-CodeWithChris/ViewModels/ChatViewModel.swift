@@ -102,6 +102,7 @@ class ChatViewModel: ObservableObject {
         
     }
     
+    /// Send message to the database
     func sendMessage(msg: String) {
         
         // Check that we have a selected chat
@@ -111,6 +112,13 @@ class ChatViewModel: ObservableObject {
         
     }
     
+    func conversationViewCleanup() {
+        databaseService.detachConversationViewListener()
+    }
+    
+    func chatListViewCleanup() {
+        databaseService.detachChatListViewListeners()
+    }
     
     // MARK: Helper Methods
     

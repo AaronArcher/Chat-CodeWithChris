@@ -20,7 +20,7 @@ struct Chat: Codable, Identifiable {
     
 }
 
-struct ChatMessage: Codable, Identifiable {
+struct ChatMessage: Codable, Identifiable, Hashable {
     
     @DocumentID var id: String?
     var imageurl: String?

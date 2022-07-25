@@ -87,7 +87,6 @@ struct ContactsListView: View {
                 .padding(.top, 12)
                 
             } else {
-                VStack {
                     
                     Spacer()
                     
@@ -103,16 +102,13 @@ struct ContactsListView: View {
                     
                     Spacer()
                     
-                }
+                
             }
             
 
         }
         .padding(.horizontal)
-        .onAppear {
-            // Get local contacts
-            contactsViewModel.getLocalContacts()
-        }
+        
         
     }
 }
