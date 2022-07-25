@@ -47,6 +47,7 @@
 		EE1066C3288744F400F36351 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066C2288744F400F36351 /* ChatViewModel.swift */; };
 		EE1066C72888947500F36351 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066C62888947500F36351 /* DateHelper.swift */; };
 		EE957366288EAD27006F42FF /* ChatListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE957365288EAD27006F42FF /* ChatListRow.swift */; };
+		EE957368288ED186006F42FF /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE957367288ED186006F42FF /* CacheService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		EE1066C2288744F400F36351 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		EE1066C62888947500F36351 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		EE957365288EAD27006F42FF /* ChatListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListRow.swift; sourceTree = "<group>"; };
+		EE957367288ED186006F42FF /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				EE106691287F574C00F36351 /* DatabaseService.swift */,
+				EE957367288ED186006F42FF /* CacheService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				EE1066B62885F06D00F36351 /* ChatsListView.swift in Sources */,
 				EE106696288099E200F36351 /* ImagePicker.swift in Sources */,
 				EE10664D287CAA7E00F36351 /* RootView.swift in Sources */,
+				EE957368288ED186006F42FF /* CacheService.swift in Sources */,
 				EE957366288EAD27006F42FF /* ChatListRow.swift in Sources */,
 				EE106690287F550C00F36351 /* User.swift in Sources */,
 				EE106680287E103600F36351 /* WelcomeView.swift in Sources */,

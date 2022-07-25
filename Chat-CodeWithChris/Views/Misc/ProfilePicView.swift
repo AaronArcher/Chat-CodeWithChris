@@ -31,42 +31,64 @@ struct ProfilePicView: View {
                 }
                 
             } else {
-             
-                // Create url from user photo url
-                let photoUrl = URL(string: user.photo ?? "")
                 
-                AsyncImage(url: photoUrl) { phase in
+                // Check image cache, if it exists, use that
+                if let cachedImage = CacheService.getImage(forKey: user.photo!) {
                     
-                    switch phase {
-                    case .empty:
-                        // Currently Fetching
-                        ProgressView()
+                    // Image is in the cache so we'll use that
+                    cachedImage
+                        .resizable()
+                        .clipShape(Circle())
+                        .scaledToFill()
+                        .clipped()
+                    
+                } else {
+                    
+                    // If not in cache, download it
+                    
+                    // Create url from user photo url
+                    let photoUrl = URL(string: user.photo ?? "")
+                    
+                    AsyncImage(url: photoUrl) { phase in
                         
-                    case .success(let image):
-                        // Display the fetched image
-                        image
-                            .resizable()
-                            .clipShape(Circle())
-                            .scaledToFill()
-                            .clipped()
-                        
-                    case .failure:
-                        // Couldn't fetch profile photo
-                        
-                        ZStack {
-                            Circle()
-                                .foregroundColor(.white)
+                        switch phase {
+                        case .empty:
+                            // Currently Fetching
+                            ProgressView()
                             
-                            Text(user.firstname?.prefix(1) ?? "")
-                                .font(Font.button)
-                            +
-                            Text(user.lastname?.prefix(1) ?? "")
-                                .font(Font.button)
+                        case .success(let image):
+                            // Display the fetched image
+                            image
+                                .resizable()
+                                .clipShape(Circle())
+                                .scaledToFill()
+                                .clipped()
+                                .onAppear {
+                                    // Save this image into cache
+                                    CacheService.setImage(image: image,
+                                                          forKey: user.photo!)
+                                }
+                            
+                        case .failure:
+                            // Couldn't fetch profile photo
+                            
+                            ZStack {
+                                Circle()
+                                    .foregroundColor(.white)
+                                
+                                Text(user.firstname?.prefix(1) ?? "")
+                                    .font(Font.button)
+                                +
+                                Text(user.lastname?.prefix(1) ?? "")
+                                    .font(Font.button)
+                                
+                            }
                             
                         }
-                        
                     }
+                    
                 }
+                
                 
             }
             

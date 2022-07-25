@@ -13,6 +13,7 @@ struct RootView: View {
     @Environment(\.scenePhase) var scenePhase
     
     @EnvironmentObject var chatViewModel: ChatViewModel
+    @EnvironmentObject var contactsViewModel: ContactsViewModel
     
     @State private var selectedTab: Tabs = .contacts
     
@@ -36,6 +37,12 @@ struct RootView: View {
             CustomTabBar(selectedTab: $selectedTab)
             
         }
+        .onAppear(perform: {
+            if !isOnboarding {
+                // Load Contacts
+                contactsViewModel.getLocalContacts()
+            }
+        })
         .background(Color("background").ignoresSafeArea())
         .fullScreenCover(isPresented: $isOnboarding) {
             // On dismiss
