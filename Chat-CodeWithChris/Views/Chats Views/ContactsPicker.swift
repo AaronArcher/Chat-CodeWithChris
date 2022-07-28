@@ -37,15 +37,26 @@ struct ContactsPicker: View {
                             Button {
                                 // Toggle the user selected or not
                                 if isSelectedContact {
+                                    
+                                    // find index of this contact within the array
+                                    let index = selectedContacts.firstIndex(of: user)
+                                    
                                     // Remove this contact from selected contacts
-                                    selectedContacts.removeAll()
+                                    if let index = index {
+                                        selectedContacts.remove(at: index)
+                                    }
                                     
                                 } else {
-                                    // Remove other contacts first
-                                    selectedContacts.removeAll()
+                                   
+                                    // Impose limit of 3
+                                    if selectedContacts.count < 3 {
+                                        // Add this user
+                                        selectedContacts.append(user)
+                                        
+                                    } else {
+                                        // TODO: show message to say limit reached
+                                    }
                                     
-                                    // Add this user
-                                    selectedContacts.append(user)
                                 }
                                 
                             } label: {

@@ -51,6 +51,7 @@
 		EE9C0BAF2892E0EC00F353B2 /* ConversationTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BAE2892E0EC00F353B2 /* ConversationTextMessage.swift */; };
 		EE9C0BB12892E20800F353B2 /* ConversationPhotoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BB02892E20800F353B2 /* ConversationPhotoMessage.swift */; };
 		EE9C0BB3289300F200F353B2 /* ContactsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BB2289300F200F353B2 /* ContactsPicker.swift */; };
+		EE9C0BB52893148C00F353B2 /* GroupProfilePicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BB42893148C00F353B2 /* GroupProfilePicView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		EE9C0BAE2892E0EC00F353B2 /* ConversationTextMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTextMessage.swift; sourceTree = "<group>"; };
 		EE9C0BB02892E20800F353B2 /* ConversationPhotoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationPhotoMessage.swift; sourceTree = "<group>"; };
 		EE9C0BB2289300F200F353B2 /* ContactsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPicker.swift; sourceTree = "<group>"; };
+		EE9C0BB42893148C00F353B2 /* GroupProfilePicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupProfilePicView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				EE1066BC2887264E00F36351 /* ProfilePicView.swift */,
+				EE9C0BB42893148C00F353B2 /* GroupProfilePicView.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			files = (
 				EE9C0BB3289300F200F353B2 /* ContactsPicker.swift in Sources */,
 				EE106692287F574C00F36351 /* DatabaseService.swift in Sources */,
+				EE9C0BB52893148C00F353B2 /* GroupProfilePicView.swift in Sources */,
 				EE10668C287E245400F36351 /* CreateProfileTextfieldStyle.swift in Sources */,
 				EE106688287E107500F36351 /* SyncContactsView.swift in Sources */,
 				EE1066C72888947500F36351 /* DateHelper.swift in Sources */,

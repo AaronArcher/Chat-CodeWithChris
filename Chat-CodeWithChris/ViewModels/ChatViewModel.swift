@@ -40,15 +40,23 @@ class ChatViewModel: ObservableObject {
         
     }
     
-    /// Search for chat with passed in user, if found - set as selected chat. If not found, create a new chat
-    func getChatFor(contact: User) {
+    /// Search for chat with passed in users, if found - set as selected chat. If not found, create a new chat
+    func getChatFor(contacts: [User]) {
         
         // Check the user
-        guard contact.id != nil else { return }
+        for contact in contacts {
+            if contact.id == nil { return }
+
+        }
+        
+        // Create a set from the ids of the contacts passed in
+        let setOfContactIds = Set(arrayLiteral: contacts.map { u in u.id! })
         
         let foundChat = chats.filter { chat in
             
-            return chat.numparticipants == 2 && chat.participantids.contains(contact.id!)
+            let setOfParticipantIds = Set(arrayLiteral: chat.participantids)
+            
+            return chat.numparticipants == contacts.count + 1 && setOfContactIds.isSubset(of: setOfParticipantIds)
                 
         }
         
@@ -63,9 +71,14 @@ class ChatViewModel: ObservableObject {
         
         } else {
             // No chat was found, create a new one
+            
+            // Create array of ids of all participants
+            var allParticipantIds = contacts.map { u in u.id! }
+            allParticipantIds.append(AuthViewModel.getLoggedInUserID())
+            
             let newChat = Chat(id: nil,
-                               numparticipants: 2,
-                               participantids: [AuthViewModel.getLoggedInUserID(), contact.id!],
+                               numparticipants: allParticipantIds.count,
+                               participantids: allParticipantIds,
                                lastmsg: nil,
                                updated: nil,
                                msgs: nil)
@@ -78,8 +91,8 @@ class ChatViewModel: ObservableObject {
                 
                 // Set doc ID from the auto generated one in the database
                 self.selectedChat = Chat(id: docID,
-                                         numparticipants: 2,
-                                         participantids: [AuthViewModel.getLoggedInUserID(), contact.id!],
+                                         numparticipants: allParticipantIds.count,
+                                         participantids: allParticipantIds,
                                          lastmsg: nil,
                                          updated: nil,
                                          msgs: nil)
