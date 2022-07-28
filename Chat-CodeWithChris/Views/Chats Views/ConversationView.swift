@@ -18,6 +18,8 @@ struct ConversationView: View {
     
     @State private var participants = [User]()
     
+    @State private var isContactsPickerShowing = false
+    
     @State private var selectedImage: UIImage?
     @State private var isPickerShowing = false
     @State private var isSourceMenuShowing = false
@@ -31,18 +33,29 @@ struct ConversationView: View {
             HStack {
                 VStack(alignment: .leading, spacing: 16) {
                     
-                    // Back Arrow
-                    Button {
-                        // Dismiss conversation window
-                        isChatShowing = false
+                    HStack {
+                        // Back Arrow
+                        Button {
+                            // Dismiss conversation window
+                            isChatShowing = false
+                            
+                        } label: {
+                            Image(systemName: "arrow.backward")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .scaledToFit()
+                                .foregroundColor(Color("text-header"))
+                        }
                         
-                    } label: {
-                        Image(systemName: "arrow.backward")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .scaledToFit()
-                            .foregroundColor(Color("text-header"))
+                        // Label for new message
+                        if participants.count == 0 {
+                            Text("New Message")
+                                .font(Font.chatHeading)
+                                .foregroundColor(Color("text-header"))
+                        }
+                        
                     }
+                    
                     
                     
                     // Name
@@ -51,6 +64,11 @@ struct ConversationView: View {
                         Text("\(participant?.firstname ?? "") \(participant?.lastname ?? "")")
                             .font(Font.chatHeading)
                             .foregroundColor(Color("text-header"))
+                    } else {
+                        // New message
+                        Text("Recipient")
+                            .font(Font.bodyParagraph)
+                            .foregroundColor(Color("text-input"))
                     }
                     
                 }
@@ -64,12 +82,26 @@ struct ConversationView: View {
                     
                     ProfilePicView(user: participant!)
                     
+                } else {
+                    // New message
+                    Button {
+                        // Show contact picker
+                        isContactsPickerShowing = true
+                        
+                    } label: {
+                        Image(systemName: "plus.circle.fill")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(Color("button-primary"))
+                    }
+
                 }
                 
             }
             .frame(height: 104)
             .padding(.horizontal)
-            
+            .background(Color.white.ignoresSafeArea())
+
             
             // Chat Log
             
@@ -134,7 +166,6 @@ struct ConversationView: View {
                     .padding(.top, 24)
                     
                 }
-                .background(Color("background").ignoresSafeArea())
                 .onChange(of: chatViewModel.messages.count) { newCount in
                     withAnimation {
                         proxy.scrollTo(newCount - 1)
@@ -201,23 +232,6 @@ struct ConversationView: View {
                             .font(Font.bodyParagraph)
                             .padding(10)
                         
-                        HStack {
-                            Spacer()
-                            
-                            Button {
-                                // Emojis
-                                
-                            } label: {
-                                
-                                Image(systemName: "face.smiling")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 24, height: 24)
-                                    .foregroundColor(Color("text-input"))
-                                
-                            }
-                        }
-                        .padding(.trailing, 12)
                         
                     }
                     
@@ -264,10 +278,10 @@ struct ConversationView: View {
             }
             .padding(.horizontal)
             .frame(height: 76)
-            .background(Color("background").ignoresSafeArea())
-            
+            .disabled(participants.count == 0)
             
         }
+        .background(Color("background").ignoresSafeArea())
         .onAppear {
             // Call chat view model to retrieve all messages
             chatViewModel.getMessages()
@@ -310,6 +324,18 @@ struct ConversationView: View {
             // Show the image picker
             ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing, source: source)
         }
+        .sheet(isPresented: $isContactsPickerShowing) {
+            // When sheet is dismissed
+            
+            // search for conversation with the selected participant
+            if let participant = participants.first {
+                chatViewModel.getChatFor(contact: participant)
+            }
+            
+        } content: {
+            ContactsPicker(isContactsPickerShowing: $isContactsPickerShowing, selectedContacts: $participants)
+        }
+
 
         
     }

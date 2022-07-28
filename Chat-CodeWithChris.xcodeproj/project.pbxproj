@@ -50,6 +50,7 @@
 		EE957368288ED186006F42FF /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE957367288ED186006F42FF /* CacheService.swift */; };
 		EE9C0BAF2892E0EC00F353B2 /* ConversationTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BAE2892E0EC00F353B2 /* ConversationTextMessage.swift */; };
 		EE9C0BB12892E20800F353B2 /* ConversationPhotoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BB02892E20800F353B2 /* ConversationPhotoMessage.swift */; };
+		EE9C0BB3289300F200F353B2 /* ContactsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BB2289300F200F353B2 /* ContactsPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		EE957367288ED186006F42FF /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		EE9C0BAE2892E0EC00F353B2 /* ConversationTextMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTextMessage.swift; sourceTree = "<group>"; };
 		EE9C0BB02892E20800F353B2 /* ConversationPhotoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationPhotoMessage.swift; sourceTree = "<group>"; };
+		EE9C0BB2289300F200F353B2 /* ContactsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 				EE957365288EAD27006F42FF /* ChatListRow.swift */,
 				EE9C0BAE2892E0EC00F353B2 /* ConversationTextMessage.swift */,
 				EE9C0BB02892E20800F353B2 /* ConversationPhotoMessage.swift */,
+				EE9C0BB2289300F200F353B2 /* ContactsPicker.swift */,
 			);
 			path = "Chats Views";
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE9C0BB3289300F200F353B2 /* ContactsPicker.swift in Sources */,
 				EE106692287F574C00F36351 /* DatabaseService.swift in Sources */,
 				EE10668C287E245400F36351 /* CreateProfileTextfieldStyle.swift in Sources */,
 				EE106688287E107500F36351 /* SyncContactsView.swift in Sources */,

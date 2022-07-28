@@ -14,8 +14,11 @@ enum Tabs: Int {
 }
 
 struct CustomTabBar: View {
+
+    @EnvironmentObject var chatViewModel: ChatViewModel
     
     @Binding var selectedTab: Tabs
+    @Binding var ischatShowing: Bool
     
     var body: some View {
         
@@ -36,7 +39,12 @@ struct CustomTabBar: View {
             
             Button {
                 // Open new chat
-                AuthViewModel.logOut()
+//                AuthViewModel.logOut()
+                
+                // Clear the selected chat
+                chatViewModel.clearSelectedChat()
+                
+                ischatShowing = true
                 
             } label: {
                 
@@ -73,6 +81,6 @@ struct CustomTabBar: View {
 
 struct CustomTabBar_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTabBar(selectedTab: .constant(.contacts))
+        CustomTabBar(selectedTab: .constant(.contacts),ischatShowing: .constant(false))
     }
 }
