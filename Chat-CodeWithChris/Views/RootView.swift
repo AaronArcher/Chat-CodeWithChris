@@ -19,6 +19,8 @@ struct RootView: View {
     
     @State private var isOnboarding = !AuthViewModel.isUserLoggedIn()
     
+    @State private var isLoggedIn = AuthViewModel.isUserLoggedIn()
+    
     @State private var isChatShowing = false
     
     var body: some View {

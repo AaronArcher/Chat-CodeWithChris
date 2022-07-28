@@ -112,6 +112,15 @@ class ChatViewModel: ObservableObject {
         
     }
     
+    func sendPhotoMessage(image: UIImage) {
+        
+        // Check we have a chat selected
+        guard selectedChat != nil else { return }
+        
+        databaseService.sendPhotoMessage(image: image, chat: selectedChat!)
+        
+    }
+    
     func conversationViewCleanup() {
         databaseService.detachConversationViewListener()
     }

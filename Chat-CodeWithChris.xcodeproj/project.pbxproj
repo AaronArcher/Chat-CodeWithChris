@@ -48,6 +48,8 @@
 		EE1066C72888947500F36351 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1066C62888947500F36351 /* DateHelper.swift */; };
 		EE957366288EAD27006F42FF /* ChatListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE957365288EAD27006F42FF /* ChatListRow.swift */; };
 		EE957368288ED186006F42FF /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE957367288ED186006F42FF /* CacheService.swift */; };
+		EE9C0BAF2892E0EC00F353B2 /* ConversationTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BAE2892E0EC00F353B2 /* ConversationTextMessage.swift */; };
+		EE9C0BB12892E20800F353B2 /* ConversationPhotoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BB02892E20800F353B2 /* ConversationPhotoMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +93,8 @@
 		EE1066C62888947500F36351 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		EE957365288EAD27006F42FF /* ChatListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListRow.swift; sourceTree = "<group>"; };
 		EE957367288ED186006F42FF /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
+		EE9C0BAE2892E0EC00F353B2 /* ConversationTextMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTextMessage.swift; sourceTree = "<group>"; };
+		EE9C0BB02892E20800F353B2 /* ConversationPhotoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationPhotoMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +258,8 @@
 				EE1066B52885F06D00F36351 /* ChatsListView.swift */,
 				EE1066B9288723CD00F36351 /* ConversationView.swift */,
 				EE957365288EAD27006F42FF /* ChatListRow.swift */,
+				EE9C0BAE2892E0EC00F353B2 /* ConversationTextMessage.swift */,
+				EE9C0BB02892E20800F353B2 /* ConversationPhotoMessage.swift */,
 			);
 			path = "Chats Views";
 			sourceTree = "<group>";
@@ -363,12 +369,14 @@
 				EE10664D287CAA7E00F36351 /* RootView.swift in Sources */,
 				EE957368288ED186006F42FF /* CacheService.swift in Sources */,
 				EE957366288EAD27006F42FF /* ChatListRow.swift in Sources */,
+				EE9C0BB12892E20800F353B2 /* ConversationPhotoMessage.swift in Sources */,
 				EE106690287F550C00F36351 /* User.swift in Sources */,
 				EE106680287E103600F36351 /* WelcomeView.swift in Sources */,
 				EE10667B287E039700F36351 /* AuthViewModel.swift in Sources */,
 				EE106686287E106000F36351 /* CreateProfileView.swift in Sources */,
 				EE106682287E104300F36351 /* PhoneNumberView.swift in Sources */,
 				EE1066B82885FAB000F36351 /* ContactRow.swift in Sources */,
+				EE9C0BAF2892E0EC00F353B2 /* ConversationTextMessage.swift in Sources */,
 				EE106666287CAF3300F36351 /* Fonts.swift in Sources */,
 				EE1066B42885F06200F36351 /* ContactsListView.swift in Sources */,
 				EE106684287E104F00F36351 /* VerificationView.swift in Sources */,
