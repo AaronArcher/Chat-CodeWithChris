@@ -52,6 +52,7 @@
 		EE9C0BB12892E20800F353B2 /* ConversationPhotoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BB02892E20800F353B2 /* ConversationPhotoMessage.swift */; };
 		EE9C0BB3289300F200F353B2 /* ContactsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BB2289300F200F353B2 /* ContactsPicker.swift */; };
 		EE9C0BB52893148C00F353B2 /* GroupProfilePicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BB42893148C00F353B2 /* GroupProfilePicView.swift */; };
+		EEE7CF2528A1ACC100E7783F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7CF2428A1ACC100E7783F /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		EE9C0BB02892E20800F353B2 /* ConversationPhotoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationPhotoMessage.swift; sourceTree = "<group>"; };
 		EE9C0BB2289300F200F353B2 /* ContactsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPicker.swift; sourceTree = "<group>"; };
 		EE9C0BB42893148C00F353B2 /* GroupProfilePicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupProfilePicView.swift; sourceTree = "<group>"; };
+		EEE7CF2428A1ACC100E7783F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				EE1066B22885F04B00F36351 /* Chats Views */,
 				EE1066B12885F03B00F36351 /* Contacts Views */,
 				EE106667287CB33000F36351 /* Custom Tab Bar */,
+				EEE7CF2328A1ACB000E7783F /* Settings */,
 				EE1066BB2887261800F36351 /* Misc */,
 			);
 			path = Views;
@@ -278,6 +281,14 @@
 			path = Misc;
 			sourceTree = "<group>";
 		};
+		EEE7CF2328A1ACB000E7783F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				EEE7CF2428A1ACC100E7783F /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -382,6 +393,7 @@
 				EE106680287E103600F36351 /* WelcomeView.swift in Sources */,
 				EE10667B287E039700F36351 /* AuthViewModel.swift in Sources */,
 				EE106686287E106000F36351 /* CreateProfileView.swift in Sources */,
+				EEE7CF2528A1ACC100E7783F /* SettingsView.swift in Sources */,
 				EE106682287E104300F36351 /* PhoneNumberView.swift in Sources */,
 				EE1066B82885FAB000F36351 /* ContactRow.swift in Sources */,
 				EE9C0BAF2892E0EC00F353B2 /* ConversationTextMessage.swift in Sources */,

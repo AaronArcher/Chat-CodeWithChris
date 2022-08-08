@@ -13,13 +13,14 @@ struct ChatsListView: View {
     @EnvironmentObject var contactsViewModel: ContactsViewModel
     
     @Binding var isChatShowing: Bool
+    @Binding var isSettingsShowing: Bool
     
     var body: some View {
         
         
         VStack {
             
-            // Heading
+            // Header
             HStack {
                 
                 Text("Chats")
@@ -28,7 +29,8 @@ struct ChatsListView: View {
                 Spacer()
                 
                 Button {
-                    // TODO: Settings Button
+                    // Settings Button
+                    isSettingsShowing = true
                     
                 } label: {
                     Image(systemName: "gearshape.fill")
@@ -95,6 +97,6 @@ struct ChatsListView: View {
 
 struct ChatsListView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatsListView(isChatShowing: .constant(false))
+        ChatsListView(isChatShowing: .constant(false), isSettingsShowing: .constant(false))
     }
 }

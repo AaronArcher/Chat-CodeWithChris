@@ -23,15 +23,17 @@ struct RootView: View {
     
     @State private var isChatShowing = false
     
+    @State private var isSettingsShowing = false
+    
     var body: some View {
         
         VStack {
             
             switch selectedTab {
             case .chats:
-                ChatsListView(isChatShowing: $isChatShowing)
+                ChatsListView(isChatShowing: $isChatShowing, isSettingsShowing: $isSettingsShowing)
             case .contacts:
-                ContactsListView(isChatShowing: $isChatShowing)
+                ContactsListView(isChatShowing: $isChatShowing, isSettingsShowing: $isSettingsShowing)
             }
             
             Spacer()
@@ -58,6 +60,10 @@ struct RootView: View {
             // Show Conversation View
             ConversationView(isChatShowing: $isChatShowing)
         }
+        .fullScreenCover(isPresented: $isSettingsShowing, content: {
+            // Settings View
+            SettingsView(isSettingsShowing: $isSettingsShowing, isOnboarding: $isOnboarding)
+        })
         .onChange(of: scenePhase) { newPhase in
             
             if newPhase == .active {

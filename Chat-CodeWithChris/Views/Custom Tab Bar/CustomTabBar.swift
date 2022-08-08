@@ -39,7 +39,6 @@ struct CustomTabBar: View {
             
             Button {
                 // Open new chat
-//                AuthViewModel.logOut()
                 
                 // Clear the selected chat
                 chatViewModel.clearSelectedChat()

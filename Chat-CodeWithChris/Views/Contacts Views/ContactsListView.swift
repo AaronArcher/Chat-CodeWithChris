@@ -15,7 +15,8 @@ struct ContactsListView: View {
     @State private var filterText = ""
     
     @Binding var isChatShowing: Bool
-    
+    @Binding var isSettingsShowing: Bool
+
     var body: some View {
 
         VStack {
@@ -29,7 +30,8 @@ struct ContactsListView: View {
             Spacer()
             
             Button {
-                // TODO: Settings Button
+                // Settings Button
+                isSettingsShowing = true
                 
             } label: {
                 Image(systemName: "gearshape.fill")
@@ -115,6 +117,6 @@ struct ContactsListView: View {
 
 struct ContactsListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactsListView(isChatShowing: .constant(false))
+        ContactsListView(isChatShowing: .constant(false), isSettingsShowing: .constant(false))
     }
 }
