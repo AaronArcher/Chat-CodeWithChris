@@ -156,6 +156,19 @@ struct ConversationView: View {
                                     
                                 }
                                 
+                                else if participants.count > 1 {
+                                    
+                                    // This is a group chat and not a message from the user, display profile photo
+                                    let userOfMsg = participants.filter { p in
+                                        p.id == message.senderid
+                                    }.first
+                                    
+                                    if let userOfMsg = userOfMsg {
+                                        ProfilePicView(user: userOfMsg)
+                                            .padding(.trailing, 16)
+                                    }
+                                    
+                                }
                                 
                                 if message.imageurl != "" {
                                     // Photo message
@@ -165,7 +178,24 @@ struct ConversationView: View {
                                     
                                 } else {
                                     // Text message
-                                    ConversationTextMessage(message: message.msg, isFromUser: isFromUser)
+                                    
+                                    // Determine if it's a group chat and a message from another user
+                                    if participants.count > 1 && !isFromUser {
+                                        
+                                        let userOfMsg = participants.filter { p in
+                                            p.id == message.senderid
+                                        }.first
+                                        
+                                        // Show text message with name
+                                        ConversationTextMessage(message: message.msg,
+                                                                isFromUser: isFromUser,
+                                                                name: "\(userOfMsg?.firstname ?? "") \(userOfMsg?.lastname ?? "")")
+                                        
+                                    } else {
+                                        ConversationTextMessage(message: message.msg,
+                                                                isFromUser: isFromUser)
+
+                                    }
                                     
                                 }
                                 
@@ -182,7 +212,7 @@ struct ConversationView: View {
                                 }
                                 
                             }
-                            .id(index)
+                            .id(index) // use this to auto scroll to bottom of the chat
                             
                         }
                         
