@@ -29,6 +29,8 @@ struct ProfilePicView: View {
                         .font(Font.button)
                     
                 }
+                .foregroundColor(Color("text-secondary"))
+
                 
             } else {
                 
@@ -83,6 +85,8 @@ struct ProfilePicView: View {
                                     .font(Font.button)
                                 
                             }
+                            .foregroundColor(Color("text-secondary"))
+
                             
                         }
                     }

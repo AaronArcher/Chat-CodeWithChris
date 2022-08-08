@@ -53,6 +53,8 @@
 		EE9C0BB3289300F200F353B2 /* ContactsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BB2289300F200F353B2 /* ContactsPicker.swift */; };
 		EE9C0BB52893148C00F353B2 /* GroupProfilePicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0BB42893148C00F353B2 /* GroupProfilePicView.swift */; };
 		EEE7CF2528A1ACC100E7783F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7CF2428A1ACC100E7783F /* SettingsView.swift */; };
+		EEE7CF2728A1B9C100E7783F /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7CF2628A1B9C100E7783F /* SettingsViewModel.swift */; };
+		EEE7CF2928A1BA3E00E7783F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7CF2828A1BA3E00E7783F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +103,8 @@
 		EE9C0BB2289300F200F353B2 /* ContactsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPicker.swift; sourceTree = "<group>"; };
 		EE9C0BB42893148C00F353B2 /* GroupProfilePicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupProfilePicView.swift; sourceTree = "<group>"; };
 		EEE7CF2428A1ACC100E7783F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EEE7CF2628A1B9C100E7783F /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		EEE7CF2828A1BA3E00E7783F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,7 @@
 				EE10667A287E039700F36351 /* AuthViewModel.swift */,
 				EE10668D287F426200F36351 /* ContactsViewModel.swift */,
 				EE1066C2288744F400F36351 /* ChatViewModel.swift */,
+				EEE7CF2628A1B9C100E7783F /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				EE106693287F5A1600F36351 /* TextHelper.swift */,
 				EE1066BE28873A9400F36351 /* RoundedCornerExtension.swift */,
 				EE1066C62888947500F36351 /* DateHelper.swift */,
+				EEE7CF2828A1BA3E00E7783F /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE9C0BB3289300F200F353B2 /* ContactsPicker.swift in Sources */,
+				EEE7CF2928A1BA3E00E7783F /* Constants.swift in Sources */,
 				EE106692287F574C00F36351 /* DatabaseService.swift in Sources */,
 				EE9C0BB52893148C00F353B2 /* GroupProfilePicView.swift in Sources */,
 				EE10668C287E245400F36351 /* CreateProfileTextfieldStyle.swift in Sources */,
@@ -385,6 +392,7 @@
 				EE10668A287E1A5F00F36351 /* OnboardingButtonStyle.swift in Sources */,
 				EE1066B62885F06D00F36351 /* ChatsListView.swift in Sources */,
 				EE106696288099E200F36351 /* ImagePicker.swift in Sources */,
+				EEE7CF2728A1B9C100E7783F /* SettingsViewModel.swift in Sources */,
 				EE10664D287CAA7E00F36351 /* RootView.swift in Sources */,
 				EE957368288ED186006F42FF /* CacheService.swift in Sources */,
 				EE957366288EAD27006F42FF /* ChatListRow.swift in Sources */,

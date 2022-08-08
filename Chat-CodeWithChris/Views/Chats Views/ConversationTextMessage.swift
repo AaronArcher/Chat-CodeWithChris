@@ -27,7 +27,7 @@ struct ConversationTextMessage: View {
             // Text
             Text(message)
                 .font(Font.bodyParagraph)
-                .foregroundColor(isFromUser ? Color("text-button") : Color("text-primary"))
+                .foregroundColor(isFromUser ? Color("text-button") : Color("text-secondary"))
             
             
         }

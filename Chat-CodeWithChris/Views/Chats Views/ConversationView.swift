@@ -126,7 +126,7 @@ struct ConversationView: View {
             }
             .frame(height: 104)
             .padding(.horizontal)
-            .background(Color.white.ignoresSafeArea())
+            .background(Color("view-header-background").ignoresSafeArea())
 
             
             // Chat Log

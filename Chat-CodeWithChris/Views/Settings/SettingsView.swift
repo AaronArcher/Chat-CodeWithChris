@@ -12,7 +12,7 @@ struct SettingsView: View {
     @Binding var isSettingsShowing: Bool
     @Binding var isOnboarding: Bool
     
-    @State private var isDarkMode = false
+    @EnvironmentObject var settingsViewModel: SettingsViewModel
     
     var body: some View {
 
@@ -44,7 +44,7 @@ struct SettingsView: View {
             // Form
             Form {
                 
-                Toggle("Dark Mode", isOn: $isDarkMode)
+                Toggle("Dark Mode", isOn: $settingsViewModel.isDarkMode)
                 
                 Button {
                     //  Log out
@@ -66,9 +66,14 @@ struct SettingsView: View {
 
                 
             }
+            .background(Color("background"))
             
         }
         .background(Color("background").ignoresSafeArea())
+        .onAppear {
+                UITableView.appearance().backgroundColor = .clear
+        }
+        .preferredColorScheme(settingsViewModel.isDarkMode ? .dark : .light)
 
 
     }
