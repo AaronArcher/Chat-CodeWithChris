@@ -99,6 +99,7 @@ class DatabaseService {
         let doc = db.collection("users").document(AuthViewModel.getLoggedInUserID())
         doc.setData(["firstname": firstname,
                      "lastname": lastname,
+                     "isActive" : true,
                      "phone": userPhone])
         
         // Check if image is passed through

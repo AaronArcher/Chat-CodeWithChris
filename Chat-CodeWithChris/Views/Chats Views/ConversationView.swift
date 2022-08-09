@@ -290,6 +290,11 @@ struct ConversationView: View {
                         TextField("Type your message...", text: $chatMessage)
                             .foregroundColor(Color("text-input"))
                             .font(Font.bodyParagraph)
+                            .placeholder(when: chatMessage.isEmpty) {
+                                Text("Type your message...")
+                                    .font(Font.bodyParagraph)
+                                    .foregroundColor(Color("text-textfield"))
+                            }
                             .padding(10)
                         
                         
@@ -387,9 +392,12 @@ struct ConversationView: View {
         .sheet(isPresented: $isContactsPickerShowing) {
             // When sheet is dismissed
             
-            // search for conversation with the selected participant
+            if participants.count > 0 {
+             
+                // search for conversation with the selected participant
+                chatViewModel.getChatFor(contacts: participants)
                 
-            chatViewModel.getChatFor(contacts: participants)
+            }
             
             
         } content: {

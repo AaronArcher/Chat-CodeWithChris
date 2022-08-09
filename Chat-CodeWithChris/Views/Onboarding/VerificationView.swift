@@ -16,8 +16,11 @@ struct VerificationView: View {
     @Binding var currentStep: OnboardingStep
     @Binding var isOnboarding: Bool
     
-
     @State private var verificationCode = ""
+    
+    @State private var isButtonDisabled = false
+    
+    @State private var isErrorVisible = false
     
     var body: some View {
 
@@ -42,6 +45,7 @@ struct VerificationView: View {
                 TextField("", text: $verificationCode)
                     .font(Font.bodyParagraph)
                     .keyboardType(.numberPad)
+                    .foregroundColor(Color("text-textfield"))
                     .onReceive(Just(verificationCode)) { _ in
                         TextHelper.limitText(&verificationCode, 6)
                     }
@@ -50,9 +54,23 @@ struct VerificationView: View {
             }
             .padding(.top, 34)
             
+            // Error Label
+            Text("Invalid verification code")
+                .foregroundColor(.red)
+                .font(Font.smallText)
+                .padding(.top, 20)
+                .opacity(isErrorVisible ? 1 : 0)
+            
             Spacer()
             
             Button {
+                
+                // Hide error message
+                isErrorVisible = false
+                
+                // Disable button against multiple taps
+                isButtonDisabled = true
+                
                 // Send the code to firebase
                 AuthViewModel.verifyCode(code: verificationCode) { error in
                     
@@ -80,17 +98,31 @@ struct VerificationView: View {
                         
                         
                     } else {
-                        // TODO: Show error message
+                        // Show error message
+                        isErrorVisible = true
                     }
+                    
+                    isButtonDisabled = false
                 }
                 
               
                 
             } label: {
-                Text("Next")
+                
+                HStack {
+
+                    Text("Next")
+
+                    if isButtonDisabled {
+                        ProgressView()
+                            .padding(.leading, 5)
+                    }
+                    
+                }
             }
             .buttonStyle(OnboardingButtonStyle())
             .padding(.bottom, 87)
+            .disabled(isButtonDisabled)
 
             
         }

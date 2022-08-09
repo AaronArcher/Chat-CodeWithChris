@@ -12,6 +12,8 @@ struct PhoneNumberView: View {
     
     @State private var phoneNumber = ""
     @Binding var currentStep: OnboardingStep
+    @State private var isButtonDisabled = false
+    @State private var isErrorVisible = false
     
     var body: some View {
 
@@ -35,13 +37,19 @@ struct PhoneNumberView: View {
                 
                 HStack {
                     
-                    TextField("e.g +1 123 123 1234 ", text: $phoneNumber)
+                    TextField("e.g +1 123 123 1234", text: $phoneNumber)
                         .font(Font.bodyParagraph)
                         .keyboardType(.phonePad)
+                        .foregroundColor(Color("text-textfield"))
                         .onReceive(Just(phoneNumber)) { _ in
                             TextHelper.applyPatternOnNumbers(&phoneNumber,
                                                              pattern: "+# (###) ###-####",
                                                              replacementCharacter: "#")
+                        }
+                        .placeholder(when: phoneNumber.isEmpty) {
+                            Text("e.g +1 123 123 1234")
+                                .font(Font.bodyParagraph)
+                                .foregroundColor(Color("text-textfield"))
                         }
                     
                     Spacer()
@@ -62,9 +70,23 @@ struct PhoneNumberView: View {
             }
             .padding(.top, 34)
             
+            
+            // Error Label
+            Text("Please enter a valid phone number")
+                .foregroundColor(.red)
+                .font(Font.smallText)
+                .padding(.top, 20)
+                .opacity(isErrorVisible ? 1 : 0)
+            
             Spacer()
             
             Button {
+                
+                // hide the error label
+                isErrorVisible = false
+                
+                // Disable button from multiple taps
+                isButtonDisabled = true
                 
                 // Send their phone number to firebase
                 AuthViewModel.sendPhoneNumber(phone: phoneNumber) { error in
@@ -74,16 +96,29 @@ struct PhoneNumberView: View {
                         // Move to next step
                         currentStep = .verification
                     } else {
-                        // TODO: Show an error
+                        // Show an error
+                        isErrorVisible = true
                     }
+                    
+                    isButtonDisabled = false
                 }
                 
                 
             } label: {
-                Text("Next")
+                
+                HStack {
+                    
+                    Text("Next")
+                    if isButtonDisabled {
+                        ProgressView()
+                            .padding(.leading, 5)
+                    }
+                    
+                }
             }
             .buttonStyle(OnboardingButtonStyle())
             .padding(.bottom, 87)
+            .disabled(isButtonDisabled)
 
             
         }

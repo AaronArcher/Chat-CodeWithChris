@@ -55,6 +55,7 @@
 		EEE7CF2528A1ACC100E7783F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7CF2428A1ACC100E7783F /* SettingsView.swift */; };
 		EEE7CF2728A1B9C100E7783F /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7CF2628A1B9C100E7783F /* SettingsViewModel.swift */; };
 		EEE7CF2928A1BA3E00E7783F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7CF2828A1BA3E00E7783F /* Constants.swift */; };
+		EEE7CF2B28A3052C00E7783F /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7CF2A28A3052C00E7783F /* ViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +106,7 @@
 		EEE7CF2428A1ACC100E7783F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EEE7CF2628A1B9C100E7783F /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		EEE7CF2828A1BA3E00E7783F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EEE7CF2A28A3052C00E7783F /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				EE1066BE28873A9400F36351 /* RoundedCornerExtension.swift */,
 				EE1066C62888947500F36351 /* DateHelper.swift */,
 				EEE7CF2828A1BA3E00E7783F /* Constants.swift */,
+				EEE7CF2A28A3052C00E7783F /* ViewExtensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				EE10668C287E245400F36351 /* CreateProfileTextfieldStyle.swift in Sources */,
 				EE106688287E107500F36351 /* SyncContactsView.swift in Sources */,
 				EE1066C72888947500F36351 /* DateHelper.swift in Sources */,
+				EEE7CF2B28A3052C00E7783F /* ViewExtensions.swift in Sources */,
 				EE106678287DFC2A00F36351 /* AppDelegate.swift in Sources */,
 				EE106694287F5A1600F36351 /* TextHelper.swift in Sources */,
 				EE10667E287E0E7A00F36351 /* OnboardingContainerView.swift in Sources */,
@@ -549,11 +553,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Chat-CodeWithChris/Info.plist";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Sync your contacts to chat with them";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -580,11 +586,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Chat-CodeWithChris/Info.plist";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Sync your contacts to chat with them";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

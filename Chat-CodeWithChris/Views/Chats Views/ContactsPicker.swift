@@ -22,54 +22,59 @@ struct ContactsPicker: View {
                 
                 ForEach(contactsViewModel.filteredUsers) { user in
                     
-                    // Determine if this user is a selected Contact
-                    let isSelectedContact = selectedContacts.contains { u in
-                        u.id == user.id
-                    }
-                    
-                    ZStack {
-                    
-                        ContactRow(user: user)
-                                                
-                        HStack {
-                            Spacer()
-                            
-                            Button {
-                                // Toggle the user selected or not
-                                if isSelectedContact {
-                                    
-                                    // find index of this contact within the array
-                                    let index = selectedContacts.firstIndex(of: user)
-                                    
-                                    // Remove this contact from selected contacts
-                                    if let index = index {
-                                        selectedContacts.remove(at: index)
-                                    }
-                                    
-                                } else {
-                                   
-                                    // Impose limit of 3
-                                    if selectedContacts.count < 3 {
-                                        // Add this user
-                                        selectedContacts.append(user)
+                    if user.isActive {
+                        
+                        // Determine if this user is a selected Contact
+                        let isSelectedContact = selectedContacts.contains { u in
+                            u.id == user.id
+                        }
+                        
+                        ZStack {
+                        
+                            ContactRow(user: user)
+                                                    
+                            HStack {
+                                Spacer()
+                                
+                                Button {
+                                    // Toggle the user selected or not
+                                    if isSelectedContact {
+                                        
+                                        // find index of this contact within the array
+                                        let index = selectedContacts.firstIndex(of: user)
+                                        
+                                        // Remove this contact from selected contacts
+                                        if let index = index {
+                                            selectedContacts.remove(at: index)
+                                        }
                                         
                                     } else {
-                                        // TODO: show message to say limit reached
+                                       
+                                        // Impose limit of 3
+                                        if selectedContacts.count < 3 {
+                                            // Add this user
+                                            selectedContacts.append(user)
+                                            
+                                        } else {
+                                            // TODO: show message to say limit reached
+                                        }
+                                        
                                     }
                                     
+                                } label: {
+                                    Image(systemName: isSelectedContact ? "checkmark.circle.fill" : "checkmark.circle")
+                                        .resizable()
+                                        .frame(width: 25, height: 25)
+                                        .foregroundColor(Color("button-primary"))
                                 }
-                                
-                            } label: {
-                                Image(systemName: isSelectedContact ? "checkmark.circle.fill" : "checkmark.circle")
-                                    .resizable()
-                                    .frame(width: 25, height: 25)
-                                    .foregroundColor(Color("button-primary"))
-                            }
 
+                            }
+                            .padding(.trailing)
+                            
                         }
-                        .padding(.trailing)
                         
                     }
+                    
                 }
                 
             }
