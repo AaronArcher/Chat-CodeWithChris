@@ -170,26 +170,30 @@ struct ConversationView: View {
                                     
                                 }
                                 
+                                let userOfMsg = participants.filter { p in
+                                    p.id == message.senderid
+                                }.first
+                                
                                 if message.imageurl != "" {
                                     // Photo message
                                     
                                     // Check image cache, if it exists, use that
-                                    ConversationPhotoMessage(imageurl: message.imageurl!, isFromUser: isFromUser)
+                                    ConversationPhotoMessage(imageurl: message.imageurl!,
+                                                             isFromUser: isFromUser,
+                                                             isActive: userOfMsg?.isActive ?? true)
                                     
                                 } else {
                                     // Text message
                                     
                                     // Determine if it's a group chat and a message from another user
                                     if participants.count > 1 && !isFromUser {
-                                        
-                                        let userOfMsg = participants.filter { p in
-                                            p.id == message.senderid
-                                        }.first
+                                      
                                         
                                         // Show text message with name
                                         ConversationTextMessage(message: message.msg,
                                                                 isFromUser: isFromUser,
-                                                                name: "\(userOfMsg?.firstname ?? "") \(userOfMsg?.lastname ?? "")")
+                                                                name: "\(userOfMsg?.firstname ?? "") \(userOfMsg?.lastname ?? "")",
+                                                                isActive: userOfMsg?.isActive ?? true)
                                         
                                     } else {
                                         ConversationTextMessage(message: message.msg,

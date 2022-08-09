@@ -67,22 +67,27 @@ struct ContactsListView: View {
                 // List
                 List(contactsViewModel.filteredUsers) { user in
                     
-                    Button {
-                        
-                        // Search for an existing convo with this user
-                        chatViewModel.getChatFor(contacts: [user])
-                        
-                        // Display conversation view
-                        isChatShowing = true
-                        
-                    } label: {
-                        //  Display rows
-                        ContactRow(user: user)
+                    // Only show if user is active
+                    if user.isActive {
+                     
+                        Button {
                             
+                            // Search for an existing convo with this user
+                            chatViewModel.getChatFor(contacts: [user])
+                            
+                            // Display conversation view
+                            isChatShowing = true
+                            
+                        } label: {
+                            //  Display rows
+                            ContactRow(user: user)
+                                
+                        }
+                        .buttonStyle(.plain)
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        
                     }
-                    .buttonStyle(.plain)
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
                     
                 }
                 .listStyle(.plain)

@@ -15,5 +15,5 @@ struct User: Codable, Identifiable, Hashable {
     var lastname: String?
     var phone: String?
     var photo: String?
-    
+    var isActive: Bool = true
 }
