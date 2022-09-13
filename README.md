@@ -6,4 +6,10 @@ A realtime chat app where users can create their own profile registered to their
 
 Key features include:
 - Firebase SMS Authentication
-- Firebase storage for 
+- Firebase storage for user profile images & sending images in messages
+- Firestore Listeners for real time messaging
+- Access users contacts
+- Light & dark mode
+- Account Deletion
+
+Preview:
